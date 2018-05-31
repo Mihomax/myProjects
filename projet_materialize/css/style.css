@@ -1,0 +1,247 @@
+body {
+    background-color: #eaeffa !important;
+}
+
+.imagedefond {
+    background-image: url("../images.app/retro.jpg");
+    background-size: cover;
+    z-index: -2 !important;
+}
+
+.nav_avatar_membre{
+	border-radius: 50%;
+    vertical-align: -20%;
+    display: inline-block; 
+}
+
+
+.dimensionMess {
+    width: 1500px;
+    height: 800px;
+}
+
+.ajusteTaillebtn{
+    width: 170px;
+    margin-left: 1%;
+}
+@media screen and (max-width: 800px) {
+    .ajusteTaillebtn {
+        width: 165px;
+        margin-left: 2px;
+    }
+    .diminuerTailletabMb{
+        width: 98% !important;
+    }
+    #espaceListeJeu,#sectionMes, #sectionEvents,#sectionJeux,#contenuMembre,#carteProfil{
+        width: 94% !important;
+    }
+}
+
+@media screen and (min-width:801px) and (max-width: 1600px) {
+    .ajusteTaillebtn {
+        width: 205px;
+        margin-left: 2px;
+    }
+
+    #espaceListeJeu,#sectionMes,#sectionEvents,#sectionJeux,#carteProfil,#contenuMembre,.diminuerTailletabMb{
+        width: 81% !important;
+    }
+  }
+
+.diminuerTailletabMb{
+    width: 56%;
+}
+
+.centrer {
+	text-align:center;
+	margin:auto;
+}
+
+#carteMess, #carteEvents{
+    width: 50%;
+    margin-right: 0;
+    max-height: 600px; 
+    overflow: auto;
+}
+
+#nav-mobile a:link {
+    text-decoration: none !important;
+}
+
+#nav-mobile a {
+    color: white;
+}
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2') format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
+
+@font-face {
+	font-family: 'Overlock';
+	src: url('../font/Overlock-BoldItalic.ttf');
+}
+
+@font-face {
+	font-family: 'Leckerli One';
+	src: url('../font/LeckerliOne-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Lobster';
+	src: url('../font/Lobster-Regular.ttf');
+}
+
+.fontOverclock {
+    font-family: 'Overlock';
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.fontLeckerli {
+    font-family: 'Leckerli One';
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.fontLobster {
+    font-family: 'Lobster';
+    font-size: 40px;
+    letter-spacing: 2px; 
+}
+.couleurIndigo {
+    color: #3949ab;
+}
+
+.couleurOrange {
+    color: #ff9900;
+}
+
+.couleurCyan {
+    color: #0097a7;
+}
+.pointer {
+    cursor: pointer;
+}
+
+
+.input-field input[type=text]:focus + label{
+    border-bottom: 1px solid #ff9900 !important;
+    box-shadow: 0 1px 0 0 #ff9900 !important;
+}
+
+.table td {
+    text-align: center; 
+    align-items: center;   
+ }
+
+.input-field input:focus {
+    border-bottom: 1px solid #ff9900 !important;
+    box-shadow: 0 1px 0 0 #ff9900 !important
+}
+
+.couleurTexteBlanc {
+    color: white !important;
+}
+
+.tabs a:focus{
+    display: inline-block;
+    background: transparent !important;
+    border-bottom: 2px solid white;
+    color: white !important;
+   
+}
+
+/*
+.tabs a:after {
+    transition:  transform .3s !important;
+}
+*/
+.tabs a {
+    text-decoration: none;
+}
+
+.cacherBalise {
+    display: none;
+}
+
+.couleurlienjeu a{
+    color: #e68a00;
+    text-decoration: underline;
+}
+
+#clubDisc  {
+
+    margin-left:20%;
+}
+
+#venteEch {
+
+    margin-left:35%;
+}
+
+
+.clubDiscMenu {
+
+                margin-left:40px;
+                width:180px;
+}
+
+.venteEchMenu   {
+
+    margin-right:100px;
+   
+}
+
+.clubDiscMenu a  {
+
+    text-decoration: none;
+    color:  #00bcd4;
+    
+
+}
+
+.venteEchMenu a  {
+
+    text-decoration: none;
+    color:  #00bcd4;
+    
+
+}
+
+
+#messagesSec {
+
+    font-size: 120%;
+}
+
+.carousel .carousel-item {
+width:500px;height:400px !important;}
+
+.tab {
+
+    font-weight: bold;
+}
+
+#actionSection {
+
+    margin-top:20px;
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RetroParadisiaque</title>
+	<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+		<script language="javascript" src="membre/membreControleurVue.js"></script>
+		<script language="javascript" src="membre/membreRequetes.js"></script>
+		<script language="javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script language="javascript" src="js/global.js"></script>
+		<script language="javascript" src="messages/messagesRequetes.js"></script>
+		<script language="javascript" src="messages/messagesControleurVue.js"></script>
+
+		<script language="javascript" src="evenements/eventRequetes.js"></script>
+		<script language="javascript" src="evenements/eventControleurVue.js"></script>
+
+		<script language="javascript" src="connexion/connexionRequetes.js"></script>
+		<script language="javascript" src="connexion/connexionControleurVue.js"></script>
+
+		<script language="javascript" src="jeu/jeuRequetes.js"></script>
+		<script language="javascript" src="jeu/jeuControleurVue.js"></script>
+
+
+		<script language="javascript" src="js/initialisation.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+		
+    <!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet" >
+</head>
+<body onload="afficherPageAccueil();carousel()">
+	<nav class="nav-extended cyan darken-2">	
+		<div class="nav-wrapper">
+			<!--a href="#" class="brand-logo" onclick="afficherPageAccueil();"><img src="/images/akuma.gif"/></a-->
+			<a href="#" class="brand-logo ml-3 left" onclick="afficherPageAccueil();"><img src="images.app\Retro_blanc.png" width="425px" height="40px"></a>
+			
+			<!--<img src="images.app\Logo_blanc.png" width="180px" height="70px"></a>-->
+			<div id="navigation" class="nav-wrapper"></div>
+			<div class="nav-content">
+				<ul id="MenuAdminOpt" class="tabs tabs-transparent">		
+					<li class="tab"><a href="#" onclick="afficherJeuxAdmin()">Jeux<i class="material-icons left">games</i></a></li>
+					<li class="tab"><a href="#" onclick="afficherMessagesAdmin()">Club de discussion<i class="material-icons left">chat</i></a></li>
+					<li class="tab"><a href="#" onclick="rendreVisiblePgAdmin()">Membres<i class="material-icons left">account_circle</i></a></li>
+					<li class="tab"><a href="#" onclick="afficherEventsAdmin()">Événements<i class="material-icons left">event</i></a></li>
+				</ul>
+				<ul id="menuUserOpt" class="tabs tabs-transparent">						
+					<li class="tab"><a href="#" onclick="listerJeux('touslesjeux');">Jeux<i class="material-icons  left">games</i></a></li> 
+					<li class="tab"><a  href="#" onclick="afficherClubDisc();">Club de discussion<i class="material-icons left ">chat</i></a></li>
+					<li class="tab"><a href="#" onclick="afficherVenteEch();">Vente/Echange<i class="material-icons left">shop</i></a></li>
+					<li class="tab"><a href="#" onclick="afficherEvents();">Événements<i class="material-icons left">event</i></a></li>
+				</ul>
+			</div>
+		</div>	
+	</nav>
+
+	<!-- contenu de la page -->
+	
+	<div id="imgAdmin" class="col s12 m6 text-center">
+		<img class="responsive-img mt-5 diminuerTailletabMb" src="images.app/nintendo.jpg"/ style="border:3px solid white;border-radius: 10px;"><br>
+	</div>
+	<br>
+	<div class="container-fluid">
+		<div id="imgUser" class="col s12 m6 text-center">
+				<div style="color: #669999; font-size: 30px; font-weight: bold">
+						<img src="images.app\stars.png" width="40px" height="37px" style="border-radius: 50%; vertical-align: -18%;"/>
+						Meilleurs jeux du mois
+						<img src="images.app\stars.png" width="40px" height="37px" style="border-radius: 50%; vertical-align: -10%;"/>
+					</div><br>
+				<!--<img class="responsive-img mt-5 diminuerTailletabMb" src="images.app/zelda.jpg"/ style="border:1px solid #ff9900;border-radius: 10px;"><br>-->
+		
+	  <!--div class="carousel center">
+		<a class="carousel-item" href="#one!"><img src="images.app\Images Carrusel\Carr1.jpg"></a>
+		<a class="carousel-item" href="#two!"><img src="images.app\Images Carrusel\Carr2.jpg"></a>
+		<a class="carousel-item" href="#three!"><img src="images.app\Images Carrusel\Carr3.jpg"></a>
+		
+	  </div-->
+		<div class="carousel carousel-slider center">
+			<div class="carousel-item red white-text" href="#one!">
+			  <img src="images.app\Images Carrusel\Carr1.jpg"/>
+			</div>
+			<div class="carousel-item amber white-text" href="#two!">
+			  <img src="images.app\Images Carrusel\Carr2.jpg"/>
+			</div>
+			<div class="carousel-item green white-text" href="#three!">
+			  <img src="images.app\Images Carrusel\Carr3.jpg"/>
+			</div>
+			<div class="carousel-item blue white-text" href="#four!">
+			  <img src="images.app\Images Carrusel\Carr4.jpg"/>
+			</div>
+		  </div>
+		
+		</div>
+		<div class="row">
+			<div id="contenu" class="pt-5 col s12 m6 text-center">
+				
+					<div id = "messagesSec"></div>	
+					<div id = "eventSec"></div>						
+				
+				<div id="espaceListeJeu" class="container-fluid" style="width: 54%;">
+					<div id="categListJeu" class="row">
+						
+						<div id = "actionSection" class = "clubDiscMenu"><a href="#" onclick="listerJeux('Action');"><h3>Action</h3><img src ="images\SVG\Round Icons\Batman.svg"></a></div>
+						<div class = "clubDiscMenu"><a href="#" class="ml-5" onclick="listerJeux('Aventure');"><h3>Aventure</h3><img src ="images\SVG\Round Icons\Beach.svg"></a></div>
+						<div class = "clubDiscMenu"><a href="#" class="ml-5" onclick="listerJeux('Arcade');"><h3>Arcade</h3><img src ="images\SVG\Round Icons\Bus.svg"></a></div>
+						<div class = "clubDiscMenu"><a href="#" class="ml-5" onclick="listerJeux('Sport');"><h3>Sport</h3><img src ="images\SVG\Round Icons\Canoe.svg"></a></div>
+						<div class = "clubDiscMenu"><a href="#" class="ml-5" onclick="listerJeux('touslesjeux');"><h3>Tous</h3><img src ="images\SVG\Round Icons\Coding-Html.svg"></a></div>
+					</div><br>
+					<div id="contenuListJeu" style="display: block;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		
+	<div id="contenuMembre" class="container-fluid" style="width: 56%;"></div>
+	<div id="profilMembre"></div>
+	<div id="carteConnexion"></div>
+	<div id="message"></div>
+
+	<!-- debut du html sur les messages -->
+	<div id="sectionMes" class="container-fluid" style="width: 54%;">
+		<div class="row">
+			<div id="carteMess" class="card col text-center">
+				<div class="card-body">
+					<div id = "gestionMesAdmin" class="centrer">
+						<b><a href="#"  class="pl-5 couleurCyan" onclick="cacherFormMessages();rendreVisible('divEnregMes');">Publier</a></b>
+						<b><a href="#"  class="pl-5 couleurCyan" onClick="cacherFormMessages();rendreVisible('divCategMes');">Filtrer par categorie</a></b>
+						<b><a href="#"  class="pl-5 couleurCyan" onClick="cacherFormMessages();rendreVisible('divMemMes');">Filtrer par membre</a></b>
+						<b><a href="#"  class="pl-5 couleurCyan" onClick="cacherFormMessages();listerMess();$('#contenuMes').show();">Afficher les messages</a></b>
+					</div>
+					<div id="divCategMes">
+						<br>
+						<form id="formCategMes">
+							<!--span onClick="rendreInvisible('divCategMes')">X</span><br-->
+							<div class="row">
+								<div class="input-field col s6">
+									<select name="idcatm">
+										<option value="1">Vente</option>
+										<option value="2">Echange</option>
+										<option value="3">Developpeurs</option>
+										<option value="4">Astuces</option>
+										<option value="5">Evenements</option>
+										<option value="6">Meilleurs jeux</option>
+									</select>
+								</div>	
+							</div>
+							<input type="button" class="btn orange accent-4" value="Filtrer" onClick="filtrerCateg();$('#contenuMes').show();"><br>
+						</form>
+					</div>
+					<div id="divMemMes">
+						<br>
+						<form id="formMemMes">
+							<div class="row">
+								<div class="input-field col s6">
+									<label for="pseudo">Membre</label>
+									<input type="text" id="pseudo" name="pseudo">
+								</div>
+							</div>
+							<input type="button" class="btn orange accent-4" value="Filtrer" onClick="filtrerMembre();$('#contenuMes').show();"><br>
+						</form>
+					</div>
+		
+					<div id="divEnregMes">
+						<form id="formEnregMes">
+							<br><br>
+							<h3>Publier un message</h3>
+							<div class="row">
+								<div class="input-field col s6">
+									<label for="message">Message</label>
+									<input type="text" id="message" name="message">
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<select name="idcatm">
+										<option value="" disabled selected>Categorie:</option>
+										<option value="1">Vente</option>
+										<option value="2">Echange</option>
+										<option value="3">Developpeurs</option>
+										<option value="4">Astuces</option>
+										<option value="5">Evenements</option>
+										<option value="6">Meilleurs jeux</option>
+										<label>Materialize Select</label>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="file-field input-field col s12">
+
+									<input type="file" id="image" name="image">
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Pochette">
+									</div>
+								</div>
+							</div>
+							<input type="button" class="btn orange accent-4" value="Publier" onClick="enregistrerMessage();$('#divEnregMes').hide();"><br>
+
+						</form>
+					</div>
+					<div id="contenuMes" style="padding: 0"></div>
+					<div id="messagesMes"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- fin du html sur les messages -->
+
+	<!-- debut du html sur les événements -->
+	<div id="sectionEvents" class="container-fluid" style="width: 54%;">
+		<div class="row">
+			<div id="carteEvents" class="card col text-center" style="max-height: 600px; overflow: auto;">
+				<div class="card-body"> 
+					<div class="centrer">
+						<b><a href="#" class="pl-5 couleurCyan" onclick="setIsModifier(false);cacherFormEvents();rendreVisible('divEnregEvents');rendreVisibleEnr()">Créer</a></b>
+						<b><a href="#" class="pl-5 couleurCyan" onClick="setIsModifier(true);cacherFormEvents();listerEvents(true);$('#contenuEvents').show();">Lister</a></b>
+					</div>
+					<div id="divEnregEvents">
+						<form id="formEnregEvents">
+							<br>
+							<div class="row">
+								<div class="input-field col s6">
+									<label id="labelTitre" for="titre" class="active">Titre</label>
+									<input type="text" id="titre" name="titre">
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s6">
+									<label id="labelDesc" for="descr" class="active">Description</label>
+									<input type="text" id="descr" name="descr">
+								</div>
+							</div>
+							<div class="row">
+								<div class="file-field input-field col s12">
+									<input type="file" id="img1" name="img1">
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Image 1">
+									</div>
+								</div>
+								<div class="file-field input-field col s12">
+									<input type="file" id="img2" name="img2">
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Image 2">
+									</div>
+								</div>
+								<div class="file-field input-field col s12">
+									<input type="file" id="img3" name="img3">
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Image 3">
+									</div>
+								</div>
+							</div>
+							<input type="button" class="btn orange accent-4" value="Envoyer" onClick="enregistrerEvents();rendreInvisible('divEnregEvents');"><br>
+						</form>
+					</div>
+					<div id="contenuEvents" style="padding: 0"></div>
+					<div id="messagesEvents" class="centrer"></div>
+				</div>
+			</div>
+			<!--div class="col-md-2"></div-->
+		</div>
+	</div>
+	<!-- fin du html sur les événements -->
+
+	<!-- debut du html sur les Jeux -->
+	<div id="sectionJeux" class="container-fluid" style="width: 54%;">
+		<div class="row">
+			<div id="carteJeux" class="card col text-center" style="max-height: 600px; overflow: auto;">
+				<div class="card-body">
+					<div class="centrer">
+						<b><a href="#" class="pl-5 couleurCyan" onclick="cacherFormJeux();rendreVisible('divEnregJeu');rendreVisibleEnr()">Enregistrer</a></b>
+						<b><a href="#" id="listerSupprJeu" class="pl-5 couleurCyan" onClick="cacherFormJeux();listerJeux('null');$('#contenuJeux').show();">Lister/Supprimer</a></b>
+					</div>
+					<div id="divEnregJeu" style="margin: 0 auto;">
+						<form id="formEnregJeux">
+							<br>
+							<div class="row">
+								<div class="input-field col s6">
+									<label for="nomjeu" class="active">Nom</label>
+									<input type="text" id="nomjeu" name="nomjeu">
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<select name="idcatjeu" id="idcatjeu">
+										<option value="" disabled selected>Categorie:</option>
+										<option value="1">Arcade</option>
+										<option value="2">Aventure</option>
+										<option value="3">Action</option>
+										<option value="4">Sport</option>
+										<label>Materialize Select</label>
+									</select>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s6">
+									<label for="trailerjeu" class="active">Trailer</label>
+									<input type="text" id="trailerjeu" name="trailerjeu">
+								</div>
+							</div>
+							<div class="row">
+								<div class="file-field input-field col s12">
+									<input type="file" id="pochettejeu" name="pochettejeu">
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Pochette du jeu">
+									</div>
+								</div>
+								<div class="file-field input-field col s12">
+									<input type="file" id="fichierjeu" name="fichierjeu">
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text" placeholder="Fichier installable">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s6">
+									<label for="descjeu" class="active">Description</label>
+									<input type="text" id="descjeu" name="descjeu">
+								</div>
+							</div>
+							<input type="button" class="btn orange accent-4" value="Envoyer" onClick="enregistrerJeu();rendreInvisible('divEnregJeu');"><br>
+						</form>
+					</div>
+					<div id="contenuJeux" style="padding: 0"></div>
+					<div id="messagesJeux" class="centrer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- fin du html sur les jeux -->
+
+	<hr style="margin-top: 10%;">
+
+	<footer class="text-muted">
+		<div class="container">
+			<p class="float-right">
+				<a id="lienhautpage" href="#" class="text-muted">Haut de la page</a>
+			</p>
+			<p><small>&copy; Copyright 2018 - tous droits réservés</small></p>
+		</div>
+	</footer>
+
+	<script src="js/bootstrap.min.js"></script>
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>
