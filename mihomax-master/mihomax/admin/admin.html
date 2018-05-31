@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+<meta charset="UTF-8"> 
+
+<link href="../css/bootstrap.min.css" rel="stylesheet">   
+<script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+  <link href="../css/mystyle.css" type="text/css" rel="stylesheet">
+  <script language="javascript" src="js/jquery-3.3.1.min.js"></script>
+   <script language="javascript" src="Films/filmsRequetes.js"></script>
+  <script language="javascript" src="Films/filmsControleurVue.js"></script> 
+<script src="../js/functions.js"></script>
+</head>
+
+<body>
+
+
+<img id="logo" src="../images/logo.png">
+    <div class = "titre"><h3>Bonjour chers amis!!! Michael, Maxim, Marina et Hovhannes (et Antonio :) ), 
+	<br>qu'est-ce qu'on va faire aujourd'hui?</h3></div><br>
+
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    
+    <ul class="nav navbar-nav">
+      <li ><a href="admin.html"><input class="btn btn-warning" type="button" value="Accueil " ></a></li>
+      <li><a href="#"><input class="btn btn-success" type="button" value="Ajouter un film " onClick="visible();"></a></li>
+      <li><a href="#"><input class="btn btn-info" type="button" value="Afficher la liste des films " onClick="lister();$('#contenu').show();"></a></li>
+      <li><a href="#"><input class="btn btn-danger"type="button" value="Check la statistique " onClick="statist();"></a></li>
+    </ul>
+  </div>
+</nav>
+	<br><br>
+	
+	<div id="ajout" >
+        <form id="ajouter" >
+            Titre : <input type="text" id="titre" name="titre">
+            Duree : <input type=text id="duree" name="duree">
+            Realisateur : <input type="text" id="res" name="res">
+            Genre : <input type="text" id="genre" name="genre"><br><br>
+            Pays : <input type="text" id="pays" name="pays">
+            Prix : <input type="number" step="any" id="prix" name="prix">
+            Trailer : <input type="text" id="trailer" name="trailer">
+            Rating : <input type="number" step="any" id="rating" name="rating"><br><br>
+            Description : <input type="text" id="descr" name="descr"><br><br>
+		      	Pochette : <input type="file" id="pochette" name="pochette"><br><br>
+
+			<input class="btn btn-primary"  type="button" onClick="enregistrer();" value="Ajouter">
+			<input class="btn btn-danger" onClick="fermAjout();" type="button" value="Fermer">
+    </form>	
+    	
+  </div>
+  
+  
+		
+		
+		<div id="contenu" >
+
+   
+    </div>
+		<div id="messages" style="position:absolute;top:2%;left:80%;color:red;"></div>
+		<div id="divFormFiche"  display:none">
+			<form id="formFicheF">
+				<h3></h3><br><br>
+				
+				<input type="hidden" id="idf" name="idf">
+				Titre:<input type="text" id="titreF" name="titreF">
+				Duree:<input type="text" id="dureeF" name="dureeF">
+				Realisateur:<input type="text" id="resF" name="resF">
+				Genre : <input type="text" id="genreF" name="genreF"><br><br>
+        Pays : <input type="text" id="paysF" name="paysF">
+        Prix : <input type="number" step="any" id="prixF" name="prixF">
+        Trailer : <input type="text" id="trailerF" name="trailerF">
+        Rating : <input type="number" step="any" id="ratingF" name="ratingF"><br><br>
+        Description : <input type="text" id="descrF" name="descrF"><br><br>
+        Pochette : <input type="file" id="pochette" name="pochette"><br><br>
+            
+        <input class="btn btn-primary" type="button" value="Modifier" onClick="modifier();">
+        <input class="btn btn-danger" onClick="rendreInvisible('divFormFiche')" type="button" value="Fermer">
+			</form>
+    </div>
+    
+</body>
+
+</html>

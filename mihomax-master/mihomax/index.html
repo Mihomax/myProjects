@@ -1,0 +1,1105 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Mihomax</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Mihomax" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+//Hi everybody
+    </script>
+    <!-- //for-mobile-apps -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/contactstyle.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/faqstyle.css" type="text/css" media="all" />
+    <link href="css/single.css" rel='stylesheet' type='text/css' />
+    <link href="css/medile.css" rel='stylesheet' type='text/css' />
+    <!-- banner-slider -->
+    <link href="css/jquery.slidey.min.css" rel="stylesheet">
+    <!-- //banner-slider -->
+    <!-- pop-up -->
+    <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //pop-up -->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- banner-bottom-plugin -->
+    <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/checkform.js"></script>
+    <script src="js/global.js"></script>
+    <script src="admin/filmsRequetes.js"></script>
+    <script src="admin/filmsControleurVue.js"></script>
+    <script src="js/pagesControleur.js"></script>
+    <script src="panier/panierRequetes.js"></script>
+    <script src="panier/panierControleurVue.js"></script>
+    <script src="users/userControleurVue.js"></script>
+    <script src="users/usersRequetes.js"></script>
+  	<script src="achat/achatControleurVue.js"></script>
+    <script src="achat/achatrequest.js"></script>
+    
+    
+    <script>
+        $(document).ready(function() {
+            $("#owl-demo").owlCarousel({
+
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                items: 5,
+                itemsDesktop: [640, 4],
+                itemsDesktopSmall: [414, 3]
+
+            });
+
+        });
+
+    </script>
+    <!-- //banner-bottom-plugin -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+
+    </script>
+    <!-- start-smoth-scrolling -->
+</head>
+
+<body onload="listerTop(); currentUser();">
+	<nav class="navbar hsdiv" id="divNavbar">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#" onclick="showMainPage();">MIHOMAX</a>
+	    </div>
+	    <ul class="nav navbar-nav navbar-right" id="panelDeUser">
+	    	
+	    </ul>
+	
+	</nav>
+	 <div id="divMenu" class="hsdiv">
+	    <!-- header -->
+	    <div class="header">
+	        <div class="container">
+	            <div class="mihamax_logo">
+	                <a href="#" onclick="showMainPage();">
+	                    <img src="images/logo.png"></a>
+	            </div>
+<!-- 	            <div class="w3_search"> -->
+<!-- 	                <form action="html/catalog.php" method="get"> -->
+<!-- 	                    <input type="text" name="nom" placeholder="Recherche"> -->
+<!-- 	                    <input type="submit" value="Aller"> -->
+<!-- 	                </form> -->
+<!-- 	            </div> -->
+<!-- 	            <div class="w3l_sign_in_register"> -->
+<!-- 	                <ul> -->
+<!-- 	                    <li><i class="" aria-hidden="true"></i> -->
+<!-- 	                        <li><a href="showLoginPage();">Se connecter</a></li> -->
+<!-- 	                </ul> -->
+<!-- 	            </div> -->
+	            <div class="clearfix"> </div>
+	        </div>
+	    </div>
+	    <!-- //header -->
+	    <!-- nav -->
+	    <div class="movies_nav">
+	        <div class="container">
+	            <nav class="navbar navbar-default">
+	                <div class="navbar-header navbar-left">
+	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+	                </div>
+	                <!-- Collect the nav links, forms, and other content for toggling -->
+	                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+	                    <nav>
+	                        <ul class="nav navbar-nav">
+	                            <li class="active"><a href="showMainPage();">Accueil</a></li>
+	                            <li class="dropdown">
+	                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Genres <b class="caret"></b></a>
+	                                <ul class="dropdown-menu multi-column columns-3">
+	                                    <li>
+	                                        <div class="col-sm-4">
+	                                            <ul class="multi-column-dropdown">
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Action','')">Action</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Biographie','')">Biographie</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Crime','')">Crime</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Famille','')">Famille</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Horreur','')">Horreur</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Romance','')">Romance</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Sports','')">Sports</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Guerre','')">Guerre</a></li>
+	                                            </ul>
+	                                        </div>
+	                                        <div class="col-sm-4">
+	                                            <ul class="multi-column-dropdown">
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Adventure','')">Adventure</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Comédie','')">Comédie</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Documentaire','')">Documentaire</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Fantaisie','')">Fantaisie</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Thriller','')">Thriller</a></li>
+	                                            </ul>
+	                                        </div>
+	                                        <div class="col-sm-4">
+	                                            <ul class="multi-column-dropdown">
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Animation','')">Animation</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Costume','')">Costume</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Drame','')">Drame</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Histoire','')">Histoire</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Musicale','')">Musicale</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','Psychologique','')">Psychologique</a></li>
+	                                            </ul>
+	                                        </div>
+	                                        <div class="clearfix"></div>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                            <li><a href="showCatalogWithFiltre('','','');">tv - séries</a></li>
+	                            <li><a href="showMainPage();">nouveautés</a></li>
+	                            <li class="dropdown">
+	                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pays <b class="caret"></b></a>
+	                                <ul class="dropdown-menu multi-column columns-3">
+	                                    <li>
+	                                        <div class="col-sm-4">
+	                                            <ul class="multi-column-dropdown">
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Asie')">Asie</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','France')">France</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Taiwan')">Taiwan</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Amérique')">Amérique</a></li>
+	                                            </ul>
+	                                        </div>
+	                                        <div class="col-sm-4">
+	                                            <ul class="multi-column-dropdown">
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Chine')">Chine</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Hong-Kong')">Hong-Kong</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Japon')">Japon</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Thailand')">Thailand</a></li>
+	                                            </ul>
+	                                        </div>
+	                                        <div class="col-sm-4">
+	                                            <ul class="multi-column-dropdown">
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Europe')">Europe</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Inde')">Inde</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Corée')">Corée</a></li>
+	                                                <li><a href="#" onclick="showCatalogWithFiltre('','','Royaume-Uni')">Royaume-Uni</a></li>
+	                                            </ul>
+	                                        </div>
+	                                        <div class="clearfix"></div>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                            <li><a href="showMainPage();">Top ventes</a></li>
+	                            <li><a href="showCatalogWithFiltre('','','')">A - z list</a></li>
+	                        </ul>
+	                    </nav>
+	                </div>
+	            </nav>
+	        </div>
+	    </div>
+    </div>
+    <!-- //nav -->
+    <!-- banner -->
+    <div id="divSlider" class="hsdiv">
+	    <div id="slidey" style="display:none;">
+	        <ul>
+	            <li><img src="images/5.jpg" alt=" ">
+	                <p class='title'>La ligue des justiciers</p>
+	                <p class='description'> Depuis la mort de Superman, rien ne va plus. Des entités maléfiques dérangent les habitants. Elles sont alimentées par Steppenwolf... </p>
+	            </li>
+	            <li><img src="images/2.jpg" alt=" ">
+	                <p class='title'>Star Wars - Épisode 8</p>
+	                <p class='description'>Il y a bien longtemps, dans une galaxie lointaine, très lointaine... Le Premier Ordre étend ses tentacules aux confins de l'univers ...</p>
+	            </li>
+	            <li><img src="images/3.jpg" alt=" ">
+	                <p class='title'>Les Gardiens de la Galaxie 2</p>
+	                <p class='description'>Les Gardiens de la galaxie 2 poursuit les aventures de l' équipe alors qu'elle traverse les confins du cosmos.</p>
+	            </li>
+	            <li><img src="images/4.jpg" alt=" ">
+	                <p class='title'>Jumanji</p>
+	                <p class='description'>Le destin de quatre lycéens en retenue bascule lorsqu'ils sont aspirés dans le monde de Jumanji. Après avoir découvert...</p>
+	            </li>
+	            <li><img src="images/6.jpg" alt=" ">
+	                <p class='title'>Coco</p>
+	                <p class='description'>Depuis déjà plusieurs générations, la musique est bannie dans la famille de Miguel. Un vrai déchirement pour le jeune garçon.</p>
+	            </li>
+	            <li><img src="images/7.jpg" alt=" ">
+	                <p class='title'>Le throne de fer</p>
+	                <p class='description'>Daenerys Targaryen, secondée par sa gigantesque armée constituée de Dothrakis, de Puînés et d'Immaculés ainsi que de la flotte Fer-nés des Greyjoy, a enfin accosté à Westeros...</p>
+	            </li>
+	        </ul>
+	    </div>
+    </div>
+    <script src="js/jquery.slidey.js"></script>
+    <script src="js/jquery.dotdotdot.min.js"></script>
+    <script type="text/javascript">
+        $("#slidey").slidey({
+            interval: 8000,
+            listCount: 5,
+            autoplay: false,
+            showList: true
+        });
+        $(".slidey-list-description").dotdotdot();
+
+    </script>
+    <!-- //banner -->
+    <!-- begin Caroosel  -->
+    <div id="divCarooselFilms" class="hsdiv container">
+    	<h1 class="text-center" style="margin: 1em 0;">La meilleure douzaine de films</h1>
+	    <div class="row" id="beginBestFilms">
+	        
+	    </div>
+    </div>
+    <!-- End Caroosel  -->
+    <!--  Admin panel -->
+    <div id="divAdmin" class="hsdiv" style="display: none;">
+		<!-- Admin menu -->	
+		<nav class="navbar navbar-inverse mb-5" style="margin-bottom: 2em;">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="#" onclick="showMainPage();">MIHOMAX</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li><a href="#" onclick="showAdminAjouter();">Ajouter film</a></li>
+		        <li><a href="#" onclick="showAdminLister();">Lister films</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+		<!-- End admin menu -->
+		<!-- Lister films -->
+		<div class="container mt-5 hsdiv" id="divListerFilms" style="width : 100%;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h1 class="text-center">Toutes les films</h1>
+				</div>
+				<div class="panel-body">
+			
+				</div>
+				<div class="panel-footer">
+				
+				</div>
+			</div>
+		</div>
+		<!-- End lister films -->
+		<!-- Get film by id -->
+		<div class="container mt-5 hsdiv" id="divGetByIdFilms" style="display: none;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h1 class="text-center">Sélectionnez un film par id</h1>
+				</div>
+				<div class="panel-body">
+					<form id="getById" >
+						<div class="form-group row">
+							<label for="idf" class="col-sm-3 col-form-label">Id de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="1" step="1" class="form-control" id="idf" name="idf">
+							</div>
+						</div>
+						<input class="btn btn-primary"  type="button" value="Ajouter">
+						<input class="btn btn-danger" type="button" value="Fermer">
+					</form>	
+				</div>
+				<div class="panel-footer">
+				</div>
+			</div>
+		</div>
+		<!-- End get film by id -->
+		<!-- Update film -->
+		<div class="container mt-5 hsdiv" id="divMettreAJourFilm" style="display: none;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h1 class="text-center">Mettre a jour film</h1>
+				</div>
+				<div class="panel-body">
+					<form id="updateFilm" method="POST" action="#">
+						<div class="form-group row">
+							<label for="idfU" class="col-sm-3 col-form-label">Id de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="1" step="1" class="form-control" id="idfU" name="idf" readonly>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="titreU" class="col-sm-3 col-form-label">Titre de film</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="titreU" name="titre">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="dureeU" class="col-sm-3 col-form-label">Duree de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="1" max="10000" step="1" class="form-control" id="dureeU" name="duree">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="resU" class="col-sm-3 col-form-label">Realisateur de film</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="resU" name="res">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="genreU" class="col-sm-3 col-form-label">Genre de film</label>
+							<div class="col-sm-9">
+								<select class="form-control" id="genreU" name="genre[]" size="19" multiple>
+									<option value="5">Action</option>
+									<option value="7">Biographie</option>
+									<option value="8">Famille</option>
+									<option value="9">Horreur</option>
+									<option value="10">Crime</option>
+									<option value="11">Romance</option>
+									<option value="12">Sports</option>
+									<option value="13">Guerre</option>
+									<option value="14">Adventure</option>
+									<option value="3">Comédie</option>
+									<option value="15">Documentaire</option>
+									<option value="6">Fantaisie</option>
+									<option value="16">Thriller</option>
+									<option value="1">Animation</option>
+									<option value="17">Costume</option>
+									<option value="2">Drame</option>
+									<option value="4">Histoire</option>
+									<option value="18">Musicale</option>
+									<option value="19">Psychologique</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="paysU" class="col-sm-3 col-form-label">Pays de film</label>
+							<div class="col-sm-9">
+								<select class="form-control" id="paysU" name="pays">
+									<option value="Asie">Asie</option>
+									<option value="France">France</option>
+									<option value="Taiwan">Taiwan</option>
+									<option value="Amérique">Amérique</option>
+									<option value="Chine">Chine</option>
+									<option value="Hong-Kong">Hong-Kong</option>
+									<option value="Japon">Japon</option>
+									<option value="Thailand">Thailand</option>
+									<option value="Europe">Europe</option>
+									<option value="Inde">Inde</option>
+									<option value="Corée">Corée</option>
+									<option value="Royaume-Uni">Royaume-Uni</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="prixU" class="col-sm-3 col-form-label">Prix de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="0" max="100" step="0.01" class="form-control" id="prixU" name="prix">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="trailerU" class="col-sm-3 col-form-label">Trailer de film</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="trailerU" name="trailer">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="ratingU" class="col-sm-3 col-form-label">Rating de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="0" max="5" step="0.1" class="form-control" id="ratingU" name="rating">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="descrU" class="col-sm-3 col-form-label">Description de film</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" id="descrU" name="descr" rows="6"></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="pochetteU" class="col-sm-3 col-form-label">Pochette de film</label>
+							<div class="col-sm-9">
+								<input type="file" class="form-control-file" id="pochetteU" name="pochette">
+							</div>
+						</div>
+						<input class="btn btn-primary" onclick="modifierFilm();" type="button" value="Mettre a jour">
+					</form>	
+				</div>
+				<div class="panel-footer">
+				</div>
+			</div>
+		</div>
+		<!-- End update film -->
+		<!-- Add new film -->
+		<div class="container mt-5 hsdiv" id="divAjouterFilm" style="display: none;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h1 class="text-center">Ajouter film</h1>
+				</div>
+				<div class="panel-body">
+					<form id="ajouter"  method="post" enctype="multipart/form-data" action="#">
+						<div class="form-group row">
+							<label for="titre" class="col-sm-3 col-form-label">Titre de film</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="titre" name="titre" placeholder="Titre de film">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="duree" class="col-sm-3 col-form-label">Duree de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="1" max="10000" step="1" class="form-control" id="duree" name="duree" placeholder="Duree de film">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="res" class="col-sm-3 col-form-label">Realisateur de film</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="res" name="res" placeholder="Realisateur de film">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="genre" class="col-sm-3 col-form-label">Genre de film</label>
+							<div class="col-sm-9">
+								<select class="form-control" id="genre" name="genres[]" size="19" title="Vous pouvez choisir un ou plusieurs" multiple>
+									<option value="5">Action</option>
+									<option value="7">Biographie</option>
+									<option value="8">Famille</option>
+									<option value="9">Horreur</option>
+									<option value="10">Crime</option>
+									<option value="11">Romance</option>
+									<option value="12">Sports</option>
+									<option value="13">Guerre</option>
+									<option value="14">Adventure</option>
+									<option value="3">Comédie</option>
+									<option value="15">Documentaire</option>
+									<option value="6">Fantaisie</option>
+									<option value="16">Thriller</option>
+									<option value="1">Animation</option>
+									<option value="17">Costume</option>
+									<option value="2">Drame</option>
+									<option value="4">Histoire</option>
+									<option value="18">Musicale</option>
+									<option value="19">Psychologique</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="pays" class="col-sm-3 col-form-label">Pays de film</label>
+							<div class="col-sm-9">
+								<select class="form-control" id="pays" name="pays" title="Vous pouvez choisir un Pays">
+									<option value="Asie">Asie</option>
+									<option value="France">France</option>
+									<option value="Taiwan">Taiwan</option>
+									<option value="Amérique">Amérique</option>
+									<option value="Chine">Chine</option>
+									<option value="Hong-Kong">Hong-Kong</option>
+									<option value="Japon">Japon</option>
+									<option value="Thailand">Thailand</option>
+									<option value="Europe">Europe</option>
+									<option value="Inde">Inde</option>
+									<option value="Corée">Corée</option>
+									<option value="Royaume-Uni">Royaume-Uni</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="prix" class="col-sm-3 col-form-label">Prix de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="0" max="100" step="0.01" class="form-control" id="prix" name="prix" placeholder="Prix de film">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="trailer" class="col-sm-3 col-form-label">Trailer de film</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="trailer" name="trailer" placeholder="Adresse courte de la bande-annonce de YouTube">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="rating" class="col-sm-3 col-form-label">Rating de film</label>
+							<div class="col-sm-9">
+								<input type="number" min="0" max="5" step="0.1" class="form-control" id="rating" name="rating" placeholder="Rating de film">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="descr" class="col-sm-3 col-form-label">Description de film</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" id="descr" name="descr" rows="3" placeholder="Description de film"></textarea>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="pochette" class="col-sm-3 col-form-label">Pochette de film</label>
+							<div class="col-sm-9">
+								<input type="file" class="form-control-file" id="pochette" name="pochette">
+							</div>
+						</div>
+						<input class="btn btn-primary"  type="button" onclick="enregistrer();" value="Ajouter">
+						<input class="btn btn-danger" type="button" value="Fermer" onclick="showAdminLister();">
+					</form>	
+				</div>
+				<div class="panel-footer">
+				</div>
+			</div>
+		</div>
+		<!-- End add new film -->
+	</div>
+    <!--  End admin panel -->
+    
+    <!-- Film description -->
+    <div id="divSingle" class="hsdiv container" style="display: none;">
+    	<!-- 
+    	<?php
+			require_once("../BD/connexion.inc.php");
+		
+			$requete="SELECT * FROM films WHERE idf=?";
+			
+			$stmt = $connexion->prepare($requete);
+			$stmt->bind_param("i", $_GET["id"]);
+			$stmt->execute();
+			$result = $stmt->get_result();
+			$ligne = $result->fetch_object();
+			echo "<h1 class=\"text-center\">".$ligne->titre."</h1>";
+			echo "<div class=\"text-center\">\n";
+			echo "  <img src=\"../pochettes/".$ligne->pochette."\" class=\"rounded\" alt=\"Image de film\">\n";
+			echo "</div>";
+			echo "<div class=\"conteiner col-xl-7 col-lg-7 col-md-8 col-sm-10 col-xs-12\">";
+			echo "<table class=\"table table-bordered table-hover table-condensed\">";
+			echo "  <tr>\n";
+			echo "    <th scope=\"row\">Realisateur</th>\n";
+			echo "    <td>".$ligne->res."</td>\n";
+			echo "  </tr>\n";
+			echo "  <tr>\n";
+			echo "    <th scope=\"row\">Genre</th>\n";
+			
+			
+			$requeteGenre="SELECT genres.nom FROM genres, films_genres, films where films.idf=".$ligne->idf." AND films_genres.idf=films.idf AND genres.idgen=films_genres.idgen";
+			$stmt1 = $connexion->prepare($requeteGenre);
+			$stmt1->execute();
+			$result1 = $stmt1->get_result();
+			$allGenres=$result1->fetch_object()->nom;
+			while ($ligne1 = $result1->fetch_object()){
+				$allGenres.=", ".$ligne1->nom;
+			}
+			
+			
+			
+			
+			
+			echo "    <td>".$allGenres."</td>\n";
+			echo "  </tr>\n";
+			
+			
+			
+			echo "  <tr>\n";
+			echo "    <th scope=\"row\">Duree</th>\n";
+			echo "    <td>".$ligne->duree."</td>\n";
+			echo "  </tr>\n";
+			echo "  <tr>\n";
+			echo "    <th scope=\"row\">Pays</th>\n";
+			echo "    <td>".$ligne->pays."</td>\n";
+			echo "  </tr>\n";
+			echo "  <tr>\n";
+			echo "    <th scope=\"row\">Rating</th>\n";
+			echo "    <td>".$ligne->rating."</td>\n";
+			echo "  </tr>\n";
+			echo "  <tr>\n";
+			echo "    <th scope=\"row\">Prix</th>\n";
+			echo "    <td>".$ligne->prix."</td>\n";
+			echo "  </tr>\n";
+			echo "  <tr>\n";
+			echo "    <th scope=\"row\">Description</th>\n";
+			echo "    <td>".$ligne->descr."</td>\n";
+			echo "  </tr>\n";
+			echo "   <tr><td colspan=\"2\">";
+			if( isset($_SESSION["username"]) ){
+				echo "<a style=\"width: 100%; margin-top: 10px;\" class=\"btn btn-info text-center\" href=\"panier.php?action=ajout&amp;i=".$ligne->idf."&amp; u=".($ligne->pochette)."&amp;l=".($ligne->titre)."&amp;q=1&amp;p=".($ligne->prix)."\" onclick=\"window.open(this.href, '', 'toolbar=no, location=no, directories=no,	status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=800, height=600'); return false;\">Au panier</a>";
+			}else{
+				echo "<a style=\"width: 100%; margin-top: 10px;\" class=\"btn btn-info text-center\" href=\"../connection/login.php\">Au panier</a>";
+			}
+			echo "</td></tr>";
+			echo "</table>\n";
+			echo "</div>";
+			echo "<div class=\"conteiner\">";
+			echo "<div class=\"embed-responsive embed-responsive-16by9 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12\">";
+			echo "	<iframe src=\"https://www.youtube.com/embed/".$ligne->trailer."?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1\" allowfullscreen></iframe>";
+			echo "</div>";
+			echo "</div>";
+			mysqli_close($connexion);
+		?>
+		 -->
+    </div>
+    <!-- End of film description -->
+    <!-- Begin Registration -->
+    <div class="container hsdiv" id="divRegistration" style="display: none;">
+		<div class="panel panel-primary" style="margin-top: 3em;">
+			<div class="panel-heading">
+				<h1 class="text-center mt-1 mb-1">Registration</h1>
+			</div>
+			<div class="panel-body">
+				<form id="formRegistration" method="post" action="">
+				  <div class="form-group row">
+					<label for="username" class="col-sm-3 col-form-label">Pseudo</label>
+					<div class="col-sm-9">
+					  <input type="text" class="form-control" id="username" name="username" placeholder="Pseudo">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label for="password1" class="col-sm-3 col-form-label">Mot de passe</label>
+					<div class="col-sm-9">
+					  <input type="password" class="form-control" id="password1" name="password1" placeholder="Mot de passe">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label for="password2" class="col-sm-3 col-form-label">Confirmer mot de passe</label>
+					<div class="col-sm-9">
+					  <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirmer mot de passe">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label for="nom" class="col-sm-3 col-form-label">Nom</label>
+					<div class="col-sm-9">
+					  <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label for="prenom" class="col-sm-3 col-form-label">Prenom</label>
+					<div class="col-sm-9">
+					  <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prenom">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label for="email" class="col-sm-3 col-form-label">Email</label>
+					<div class="col-sm-9">
+					  <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label for="datnais" class="col-sm-3 col-form-label">Date de naissance</label>
+					<div class="col-sm-9">
+					  <input type="date" class="form-control" id="datnais" name="datnais" placeholder="YYYY-MM-DD">
+					</div>
+				  </div>
+				  
+				  <div class="form-group row">
+					<div class="col-sm-10">
+					  <button type="button" onclick="userRegistration();" class="btn btn-primary">S'inscrire</button>
+					  <h4 style="margin: 15px 0 10px 0;"> ou vous êtes déjà membre? </h4>
+					  <button type="button" onclick="showLoginPage()" class="btn btn-success">Se connecter</button>
+					</div>
+				  </div>
+				</form>
+			</div>
+			<div class="panel-footer">
+			</div>
+		</div>
+	</div>
+    <!-- End registration -->
+    <!-- Login block -->
+    <div class="container hsdiv" id="divLogin" style="margin-top: 3em; display: none;">
+    	<div class="panel panel-primary">
+    		<div class="panel-heading">
+				<h1 class="text-center mt-3 mb-3">Connection</h1>
+			</div>
+			<div class="panel-body">
+				<form id="formLogin" method="post" action="#">
+				  <div class="form-group row">
+					<label for="usernameL" class="col-sm-3 col-form-label">Pseudo</label>
+					<div class="col-sm-9">
+					  <input type="text" class="form-control" id="usernameL" name="usernameL" placeholder="Pseudo">
+					</div>
+				  </div>
+				  <div class="form-group row">
+					<label for="passwordL" class="col-sm-3 col-form-label">Mot de passe</label>
+					<div class="col-sm-9">
+					  <input type="password" class="form-control" id="passwordL" name="passwordL" placeholder="Mot de passe">
+					</div>
+				  </div>
+				  
+				  <div class="form-group row">
+					<div class="col-sm-10">
+					  <button type="button" onclick="userLogin()" class="btn btn-primary">Se connecter</button>
+					  <h4 style="margin: 15px 0 10px 0;"> première fois sur le site? </h4>
+					  <button type="button" onclick="showRegistrationPage()" class="btn btn-success">Registration</button>
+					</div>
+				  </div>
+				</form>
+			</div>
+			<div class="panel-footer">
+			</div>
+		</div>
+	</div>
+    <!-- End login block -->
+    <!-- Begin Catalogue -->
+    <div class="container hsdiv" id="divCatalogue" style="display: none;">
+		<h1 class="text-center" style="margin: 1em 0;">Catalogue de films</h1>
+		<div class="container">
+			<form id="formFilter" method="post" action="">
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<label for="selectGenre">Genre</label>
+						<select id="selectGenre" name="genre" class="form-control" onchange="filtrerFilms()">
+							<option value="" selected>Choisir...</option>
+							<option value="Action">Action</option>
+							<option value="Biographie">Biographie</option>
+							<option value="Crime">Crime</option>
+	                        <option value="Famille">Famille</option>
+	                        <option value="Horreur">Horreur</option>
+	                        <option value="Romance">Romance</option>
+	                        <option value="Sports">Sports</option>
+	                        <option value="Guerre">Guerre</option>
+	                        <option value="Adventure">Adventure</option>
+	                        <option value="Comédie">Comédie</option>
+	                        <option value="Documentaire">Documentaire</option>
+	                        <option value="Fantaisie">Fantaisie</option>
+	                        <option value="Thriller">Thriller</option>
+	                        <option value="Animation">Animation</option>
+	                        <option value="Costume">Costume</option>
+	                        <option value="Drame">Drame</option>
+	                        <option value="Histoire">Histoire</option>
+	                        <option value="Musicale">Musicale</option>
+	                        <option value="Psychologique">Psychologique</option>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="selectPays">Pays</label>
+						<select id="selectPays" name="pays" class="form-control" onchange="filtrerFilms()">
+							<option value="" selected>Choisir...</option>
+							<option value="Asie">Asie</option>
+	                        <option value="France">France</option>
+	                        <option value="Taiwan">Taiwan</option>
+	                        <option value="Amérique">Amérique</option>
+	                        <option value="Chine">Chine</option>
+	                        <option value="Hong kong">Hong kong</option>
+	                        <option value="Japon">Japon</option>
+	                        <option value="Thailand">Thailand</option>                        
+	                        <option value="Europe">Europe</option>
+	                        <option value="Inde">Inde</option>
+	                        <option value="Corée">Corée</option>
+	                        <option value="Royaume-Uni">Royaume-Uni</option>                        
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label for="inputNom">Par Nom de film</label>
+						<div class="input-group">
+							<input type="text" id="inputNom" name="nom" class="form-control" placeholder="Chercher...">
+							<span class="input-group-btn">
+								<button class="btn btn-secondary" type="button" name="nom" onclick="filtrerFilms()">Go!</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="row" id ="catalogueFilms">
+			<!-- 
+			<?php
+				require_once("../BD/connexion.inc.php");
+		
+			$requete="SELECT films.idf, films.titre, films.prix, films.pochette, films.rating FROM films";
+			$requete2="";
+			if ($_GET["genre"] != "") {
+				$requete2.=", genres, films_genres WHERE genres.nom=? AND films_genres.idf=films.idf AND genres.idgen=films_genres.idgen";
+				$param=$_GET["genre"];
+			} elseif ($_GET["realisateur"] != ""){
+				$requete2.=" WHERE res LIKE ?";
+				$param="%".$_GET["realisateur"]."%";
+			} elseif ($_GET["pays"] != ""){
+				$requete2.=" WHERE pays=?";
+				$param=$_GET["pays"];
+			} elseif ($_GET["nom"] != ""){
+				$requete2.=" WHERE titre LIKE ?";
+				$param="%".$_GET["nom"]."%";			}
+			$requete.=$requete2;
+			$stmt = $connexion->prepare($requete);
+			if ($requete2!=""){
+				$stmt->bind_param("s", $param);
+			}
+			$stmt->execute();
+			$result = $stmt->get_result();
+			while($ligne = $result->fetch_object()){
+				echo "<div class=\"col-xl-2 col-lg-2 col-md-3 col-sm-4 col-xs-6 centered-text\">\n";
+				echo "			<div class=\"thumbnail\">";
+				echo "				<a href=\"single.php?id=".$ligne->idf."\">";
+				echo "					<img src=\"../pochettes/".($ligne->pochette)."\" alt=\"Image de film\" style=\"width:100%\">";
+				echo "					<div class=\"caption\">";
+				echo "						<p class=\"text-center\"><strong>".($ligne->titre)."</strong></p>";
+				echo "									<div class=\"w3l-movie-text text-center\">\n";
+				$requeteGenre="SELECT genres.nom FROM genres, films_genres, films where films.idf=".$ligne->idf." AND films_genres.idf=films.idf AND genres.idgen=films_genres.idgen";
+				$stmt1 = $connexion->prepare($requeteGenre);
+				$stmt1->execute();
+				$result1 = $stmt1->get_result();
+				$allGenres=$result1->fetch_object()->nom;
+				while ($ligne1 = $result1->fetch_object()){
+					$allGenres.=", ".$ligne1->nom;
+				}
+					
+					
+					
+				echo "									<p>$allGenres</p>";
+				echo "                                </div>\n";
+				echo "						<div class=\"mid-2 agile_mid_2_home\">";
+				echo "							<p class=\"text-center\">".($ligne->prix)." $</p>";
+	
+				echo "							<div class=\"block-stars\">\n";
+				echo "								<ul class=\"w3l-ratings\">\n";
+														for ($i=0; $i<intval($ligne->rating); $i++){
+				echo "										<li><a href=\"#\"><i class=\"fa fa-star\" aria-hidden=\"true\"></i></a></li>\n";
+														}
+														for ($j=0; $j<(5-intval($ligne->rating));$j++){
+				echo "										<li><a href=\"#\"><i class=\"fa fa-star-o\" aria-hidden=\"true\"></i></a></li>\n";
+														}		
+				echo "								</ul>\n";
+				echo "							</div>";
+				echo "						</div>";
+				echo "						<div class=\"clearfix\"></div>";
+				
+				
+				
+				if( isset($_SESSION["username"]) ){
+					echo "<a style=\"width: 100%; margin-top: 10px;\" class=\"btn btn-info text-center\" href=\"panier.php?action=ajout&amp;i=".$ligne->idf."&amp; u=".($ligne->pochette)."&amp;l=".($ligne->titre)."&amp;q=1&amp;p=".($ligne->prix)."\" onclick=\"window.open(this.href, '', 'toolbar=no, location=no, directories=no,	status=yes, scrollbars=yes, resizable=yes, copyhistory=no, width=800, height=600'); return false;\">Au panier</a>";
+				}else{
+					echo "<a style=\"width: 100%; margin-top: 10px;\" class=\"btn btn-info text-center\" href=\"../connection/login.php\">Au panier</a>";
+				}	
+				echo "					</div>\n";
+				echo "				</a>";
+				echo "			</div>";
+				echo "		</div>";
+			} 
+			mysqli_close($connexion);
+		?>
+			 -->
+		
+		</div>	
+	</div>
+    <!-- End catalogue -->
+    <!-- Begin Panier -->
+    <div id="divPanier" class="hsdiv" style="display: none;">
+    	<h1 class="text-center" style="margin: 1em 0 1em 0;">PANIER</h1>
+			<div class="container">
+		        	<form method="post" action="" id="panierForm">
+			            		<!-- 
+			                	<?php 
+			                		if ($action!="acheter"){
+								if (creationPanier()){
+									$nbArticles=count($_SESSION['panier']['idProduit']);
+									if ($nbArticles <= 0)
+										echo "<tr><td>Votre panier est vide </ td></tr>";
+									else
+									{
+										echo "<table class=\"table table-hover\">";
+										echo "   <thead>";
+										echo "        <tr>";
+										echo "            <th>Product</th>";
+										echo "            <th>Quantity</th>";
+										echo "            <th class=\"text-center\">Price</th>";
+										echo "            <th class=\"text-center\">Total</th>";
+										echo "            <th> </th>";
+										echo "        </tr>";
+										echo "    </thead>";
+										echo "    <tbody>";
+										for ($i=0 ;$i < $nbArticles ; $i++){
+											$stringActionSuppr = "panier.php?action=suppression&i=".$_SESSION['panier']['idProduit'][$i];
+											echo "<tr>\n";
+											echo "	<td class=\"col-sm-2 col-md-2\">\n";
+											echo "		<div class=\"media\">\n";
+											echo "			<a class=\"thumbnail pull-left\" target=\"_blank\" href=\"single.php?id=".$_SESSION['panier']['idProduit'][$i]."\">";
+		                    				echo "				<img class=\"media-object\" src=\"../pochettes/".$_SESSION['panier']['pochetteProduit'][$i]."\" style=\"width: 72px; height: 106px;\"> </a>\n";
+											echo "			<div class=\"media-body\">\n";
+											echo "				<h4 class=\"media-heading\"><a href=\"single.php?id=".$_SESSION['panier']['idProduit'][$i]."\">".$_SESSION['panier']['libelleProduit'][$i]."</a></h4>\n";
+											echo "			</div>\n";
+											echo "		</div></td>\n";
+											echo "	<td class=\"col-sm-2 col-md-2 col-xs-2\" style=\"text-align: center\">\n";
+											echo "		<input type=\"number\" class=\"form-control nb".$i."\" style=\"width: 50px\" value=\"".$_SESSION['panier']['qteProduit'][$i]."\">\n";
+											echo "	</td>\n";
+											echo "	<td class=\"col-sm-2 col-md-2 text-center\"><strong>".$_SESSION['panier']['prixProduit'][$i]."$</strong></td>\n";
+											echo "	<td class=\"col-sm-2 col-md-2 text-center\"><strong>".($_SESSION['panier']['qteProduit'][$i]*$_SESSION['panier']['prixProduit'][$i])."$</strong></td>\n";
+											echo "	<td class=\"col-sm-2 col-md-2\">\n";
+											echo "		<a href=".$stringActionSuppr.">";
+											echo "		<span class=\"glyphicon glyphicon-remove\"></span> Remove\n";
+											echo "		</a></td>\n";
+											echo "</tr>";
+	
+										}
+										
+										echo "<tr>";
+										echo "<td colspan=\"3\">   </td>";
+										echo "<td> Sous total:  </td>";
+										echo "<td>";
+										echo MontantGlobal()."$";
+										echo "</td>";
+										echo "</tr>";
+										echo "<tr>";
+										echo "<td colspan=\"3\">   </td>";
+										echo "<td> TVQ:  </td>";
+										echo "<td>";
+										echo number_format( MontantGlobal()*9.98/100,2,',',' ')."$";
+										echo "</td>";
+										echo "</tr>";
+										echo "<tr>";
+										echo "<td colspan=\"3\"></td>";
+										echo "<td> TPS:  </td>";
+										echo "<td>";
+										echo number_format(MontantGlobal()*5/100,2,',',' ')."$";
+										echo "</td>";
+										echo "</tr>";
+										echo "<tr>";
+										echo "<td colspan=\"3\">   </td>";
+										echo "<td> Total:  </td>";
+										echo "<td>";
+										echo number_format(MontantGlobal()*14.98/100+MontantGlobal(),2,',',' ')."$";
+										echo "</td>";
+										echo "</tr>";
+										echo "<tr>";
+										echo "<td colspan=\"3\">   </td>";
+										echo "<td>";
+										echo "<a href=\"panier.php?action=\"></a>";
+										echo "</td>";
+										echo "<td>";
+										echo "<button type=\"button\" class=\"btn btn-success\" onclick=\"faireAchat()\">";
+										echo "Checkout <span class=\"glyphicon glyphicon-play\"></span>";
+										echo "</button></td>";
+										echo "</tr>";
+										echo "</tbody>";
+										echo "</table>";
+	
+									}
+
+								}
+
+							}else{
+								echo "<h1 class =\"text-center text-success\">Merci pour votre achat!</h1>";	
+							}
+	                	
+	                	?>
+			              -->   
+			                
+								
+		            </form>
+		       
+		    
+		</div>
+    </div>
+    <!-- End of panier -->
+    <!-- social icons -->
+    <div class="general_social_icons hsdiv" id="divSocialIcons">
+        <nav class="social">
+            <ul>
+                <li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
+                <li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
+                <li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
+                <li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- end social icons -->
+   
+    <!-- footer -->
+    <div class="footer hsdiv" id="divFooter">
+        <div class="container">
+            <div class="w3ls_footer_grid">
+                <div class="col-md-6 w3ls_footer_grid_left">
+                    <div class="w3ls_footer_grid_left1">
+                        <h2>Abonnez-vous</h2>
+                        <div class="w3ls_footer_grid_left1_pos">
+                            <form action="#" method="post">
+                                <input type="email" name="email" placeholder="Your email..." required="">
+                                <input type="submit" value="Envoyer">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 w3ls_footer_grid_right">
+                    <a href="index.html"></a>
+                </div>
+                <div class="clearfix"> <img src="images/logoBlanc.png" class="footerLogo"></div>
+            </div>
+            <div class="col-md-5 w3ls_footer_grid1_left">
+                <p>&copy; 2018 MIHOMAX | AEC 2017-2018 | By MI_chael / HO_vhannes / MAX_ime</a>
+                </p>
+            </div>
+            <div class="col-md-7 w3ls_footer_grid1_right">
+                <ul>
+                    <li>
+                        <a href="genres.html">Movies</a>
+                    </li>
+                    <li>
+                        <a href="faq.html">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="horreur.html">Action</a>
+                    </li>
+                    <li>
+                        <a href="genres.html">Adventure</a>
+                    </li>
+                    <li>
+                        <a href="comedie.html">Comedie</a>
+                    </li>
+                    <li>
+                        <a href="icons.html">Icons</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".dropdown").hover(
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+
+    </script>
+    <!-- //Bootstrap Core JavaScript -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            /*
+            	var defaults = {
+            	containerID: 'toTop', // fading element id
+            	containerHoverID: 'toTopHover', // fading element hover id
+            	scrollSpeed: 1200,
+            	easingType: 'linear' 
+            	};
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+
+    </script>
+    <!-- //here ends scrolling icon -->
+</body>
+
+</html>

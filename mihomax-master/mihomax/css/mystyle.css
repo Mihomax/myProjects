@@ -1,0 +1,82 @@
+
+
+			#logo {
+					padding: 20px;
+				}
+				h3 {
+						margin-top:-80px;
+						margin-left:300px;
+			
+				}
+				btn {
+					position
+				}
+			
+				#ajout {
+			
+					width:1000px;
+					height:280px;
+					background-color:	#DCDCDC;
+					border-radius:10px;
+					display:none;
+					position:absolute;
+					top:40%;
+					left:15%;
+					
+				}
+				#ajouter {
+					padding:20px;
+				}
+				
+			
+				h1 {
+					padding-left:15px;
+					color:white;
+				}
+				.highlited {
+								font-size:120%;
+								font-weight: bold;
+				}
+			
+				#meillclient {
+			
+						width:1000px;
+						height:180px;
+						background-color:#222222;
+						border-radius:10px;
+						position:absolute;
+						top:40%;
+						left:15%;
+						z-index: -1;
+			
+			}
+
+			#filmdesem {
+			
+				width:1000px;
+				height:180px;
+				background-color:#222222;
+				border-radius:10px;
+				position:absolute;
+				top:70%;
+				left:15%;
+				z-index: -1;
+	
+	}
+
+	#divFormFiche {
+			
+		width:1000px;
+		height:280px;
+		background-color:	#DCDCDC;
+		border-radius:10px;
+		display:none;
+		position:absolute;
+		top:40%;
+		left:15%;
+		
+	}
+
+	#formFicheF {
+		padding:20px;
+	}		
